@@ -1,0 +1,574 @@
+section, footer, nav {
+  display: block;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  -webkit-text-size-adjust: none;
+  color: #333333;
+  max-width: 15%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+a {
+  color: blue;
+  color: hsl(220, 90%, 40%);
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: blue;
+  background-color: hsl(220, 90%, 50%);
+  color: white;
+}
+
+#options {
+  position: relative;
+  z-index: 100;
+  margin-bottom: 40px;
+}
+
+button {
+  font-size: 16px;
+  -webkit-appearance: push-button;
+}
+
+footer {
+  border-top: 1px solid #cccccc;
+  font-size: 0.8em;
+  position: relative;
+  z-index: 100;
+}
+
+#disclaimer {
+  color: red;
+  font-weight: bold;
+  display: none;
+}
+
+.no-csstransforms3d #disclaimer {
+  display: block;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #cccccc;
+}
+
+figure {
+  margin: 0;
+}
+
+code {
+  font-family: 'Monaco', 'Menlo', monospace;
+}
+
+/* index navigation */
+
+.index nav ul {
+  list-style: none;
+  margin: 0 0 3.0em 0;
+  padding: 0;
+}
+
+.index nav ul a {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 24px;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-bottom: none;
+}
+
+.index nav ul li:first-child a {
+  border-radius: 10px 10px 0 0;
+}
+
+.index nav ul li:last-child a {
+  border-radius: 0 0 10px 10px;
+  border-bottom: 1px solid #cccccc;
+}
+
+/**** Docs ****/
+
+body.doc {
+  max-width: 900px;
+}
+
+.doc #content {
+  font-size: 14px;
+  line-height: 1.5em;
+}
+
+.doc #content blockquote {
+  margin-left: 0;
+  padding: 0.8em;
+  background: #eeeeee;
+  background: hsla(0, 0%, 0%, 0.04);
+}
+
+.doc #content img {
+  border: 1px solid #cccccc;
+  display: inline-block;
+}
+
+.doc #content pre {
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+.doc nav h1 {
+  font-size: 20px;
+}
+
+.doc nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.doc nav li a {
+  display: block;
+  padding: 0.3em 0;
+}
+
+.doc nav li.current a {
+  font-weight: bold;
+  color: #333333;
+}
+
+.doc nav li.current a:hover {
+  color: white;
+}
+
+@media screen and (min-width: 768px) {
+
+  body.doc #content {
+    padding-left: 220px;
+  }
+
+  .doc #doc-nav-wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  .doc .doc-nav-positioner {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .doc nav {
+    width: 200px;
+    font-size: 14px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  .doc nav h1 {
+    margin-top: 0;
+  }
+
+}
+
+/* proxy range */
+
+.proxy-range {
+  display: inline-block;
+  position: relative;
+  height: 30px;
+  width: 200px;
+  border: 1px solid hsla(0, 0%, 0%, 0.15);
+  background-color: hsla(0, 0%, 0%, 0.02);
+  border-radius: 15px;
+  box-shadow: inset 0 1px 7px hsla(0, 0%, 0%, 0.3);
+}
+
+.proxy-range.highlighted {
+  background-color: hsla(220, 90%, 50%, 0.15);
+}
+
+.proxy-range .handle {
+  width: 38px;
+  height: 38px;
+  border-radius: 20px;
+  border: 1px solid hsla(0, 0%, 0%, 0.3);
+  position: absolute;
+  top: -5px;
+  left: -20px;
+  background-color: hsla(220, 70%, 60%, 1.0);
+  background-image: -webkit-gradient(radial, center 15%, 0, center 30%, 30,
+  from(hsla(0, 0%, 100%, 0.6)),
+  color-stop(50%, hsla(0, 0%, 100%, 0.0)),
+  color-stop(50%, hsla(0, 0%, 0%, 0.0)),
+  to(hsla(0, 0%, 0%, 0.5))
+  );
+  background-image: -moz-radial-gradient(center 30%, cover,
+  hsla(0, 0%, 100%, 0.5),
+  hsla(0, 0%, 100%, 0.0) 50%,
+  hsla(0, 0%, 0%, 0.0) 50%,
+  hsla(0, 0%, 0%, 0.5)
+  );
+  box-shadow: 0 2px 0px -1px hsla(0, 0%, 100%, 0.7) inset,
+  0 -4px 2px -1px hsla(0, 0%, 0%, 0.1) inset,
+  0 1px 2px 0px hsla(0, 0%, 0%, 0.3);
+  -webkit-transition-property: width, height, top, left, -webkit-border-radius;
+  -moz-transition-property: width, height, top, left, -moz-border-radius;
+  -webkit-transition-duration: 0.1s;
+  -moz-transition-duration: 0.1s;
+}
+
+.proxy-range.highlighted .handle {
+  height: 98px;
+  top: -35px;
+  width: 4px;
+  left: -3px;
+  background-image: -webkit-gradient(linear, 0 top, 0 bottom,
+  from(hsla(0, 0%, 100%, 0.6)),
+  color-stop(50%, hsla(0, 0%, 100%, 0.0)),
+  color-stop(50%, hsla(0, 0%, 0%, 0.0)),
+  to(hsla(0, 0%, 0%, 0.5))
+  );
+  border-radius: 3px;
+}
+
+/******* Pygments *******/
+
+pre {
+  background: #111111;
+  color: white;
+  padding: 0.8em;
+  white-space: pre-wrap;
+}
+
+code .s1,
+code .s {
+  color: #78bd55;
+}
+
+/* string */
+code .mi, /* integer */
+code .cp {
+  color: #5298d4;
+}
+
+/* doctype */
+code .k {
+  color: #e39b79;
+}
+
+/* keyword */
+code .kd, /* storage */
+code .na {
+  color: #a9d866;
+}
+
+/* markup attribute */
+code .p {
+  color: #eeddbb;
+}
+
+/* punctuation */
+code .o {
+  color: #ff6633;
+}
+
+/* operator */
+code .nb {
+  color: #aa97ac;
+}
+
+/* support */
+
+/* comment */
+code .c,
+code .c1 {
+  color: #666666;
+  font-style: italic;
+}
+
+code .nt {
+  color: #a0c8fc;
+}
+
+/* Markup open tag */
+
+code .nf {
+  color: #9ea8b8;
+}
+
+/* css id */
+code .nc {
+  color: #a78352;
+}
+
+/* CSS class */
+code .m {
+  color: #de8e50;
+}
+
+/* CSS value */
+code .nd {
+  color: #9fad7e;
+}
+
+/* CSS pseudo selector */
+
+.container {
+  width: 210px;
+  height: 140px;
+  position: relative;
+  margin: 0 auto 100px;
+  border: 1px solid #cccccc;
+  -webkit-perspective: 1100px;
+  -moz-perspective: 1100px;
+  -o-perspective: 1100px;
+  perspective: 1100px;
+}
+
+#carousel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.ready #carousel {
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -o-transition: -o-transform 1s;
+  transition: transform 1s;
+}
+
+#carousel.panels-backface-invisible figure {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+#carousel figure {
+  display: block;
+  position: absolute;
+  width: 186px;
+  height: 116px;
+  left: 10px;
+  top: 10px;
+  border: 2px solid black;
+  line-height: 116px;
+  font-size: 80px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.ready #carousel figure {
+  -webkit-transition: opacity 1s, -webkit-transform 1s;
+  -moz-transition: opacity 1s, -moz-transform 1s;
+  -o-transition: opacity 1s, -o-transform 1s;
+  transition: opacity 1s, transform 1s;
+}
+
+.btn-default {
+  color: #333333;
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  border: 1px solid grey;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.box {
+  overflow: visible;
+}
+
+.second-body {
+  background: black;
+}
+
+.cube {
+  position: relative;
+  /*USING translate3d(0,0,0) TRIGGERS HARDWARE ACCELERATION
+  FOR CSS3 TRANSFORMATIONS ON THE TARGETTED ELEMENTS*/
+  -webkit-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+}
+
+/*THE TWO NEXT CLASSES AREN'T BEING USED.
+INSTEAD I DECIDED TO APPLY THE CSS WITH jQuery
+BECAUSE FOR SOME REASON TOGGLING THESE CLASSES CREATES
+A WEIRD BUG WHERE THE CLASSES DON"T GET TOGGLED BEFORE
+THE ANIMATIONS FIRE*/
+.raise {
+  /*THE ANIMATIONS ARE NOW CSS3 ANIMATIONS INSTEAD OF JAVASCRIPT*/
+  -webkit-transition: all 400ms ease-in-out;
+  -o-transition: all 400ms ease-in-out;
+  -moz-transition: all 400ms ease-in-out;
+}
+
+.lower {
+  /*WE CREATE THE BOUNCE EFFECT WHEN THE CUBES LOWER WITH THE
+  cubic-bezier() FUNCTION. IN THIS CASE THE cubic-bezier()
+  FUNCTION CREATES A SMALL BOUNCE EFFECT WHEN LOWERING
+  YOU'D HAVE TO USE A SECOND ANIMATION TO CREATE THE DOUBLE BOUNCE
+  EFFECT LIKE YOU HAD WITH THE jQuery easeOutBounce ANIMATION*/
+  -webkit-transition: all 400ms cubic-bezier(0, 0.35, .5, 1.6);
+  -o-transition: all 400ms cubic-bezier(0, 0.35, .5, 1.6);
+  -moz-transition: all 400ms cubic-bezier(0, 0.35, .5, 1.6);
+}
+
+.cube .rightFace, .cube .leftFace {
+  height: 25px;
+  width: 10px;
+  padding: 5px;
+}
+
+.leftFace {
+  position: absolute;
+
+  -webkit-transform: skew(0deg, 30deg);
+  -moz-transform: skew(0deg, 30deg);
+  -o-transform: skew(0deg, 30deg);
+
+  -moz-box-shadow: rgba(0, 0, 0, 0.4) 1px 2px 10px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 1px 2px 10px;
+  -o-box-shadow: rgba(0, 0, 0, 0.4) 1px 2px 10px;
+  box-shadow: rgba(0, 0, 0, 0.4) 1px 2px 10px;
+
+  border: 1px solid black;
+}
+
+.rightFace {
+  -webkit-transform: skew(0deg, -30deg);
+  -moz-transform: skew(0deg, -30deg);
+  -o-transform: skew(0deg, -30deg);
+
+  position: absolute;
+  left: 19.5px;
+
+  border: 1px solid black;
+}
+
+.topFace div {
+  width: 19px;
+  height: 19px;
+
+  border: 1px solid black;
+
+  -webkit-transform: skew(0deg, -30deg) scale(1, 1.16);
+  -moz-transform: skew(0deg, -30deg) scale(1, 1.16);
+  -o-transform: skew(0deg, -30deg) scale(1, 1.16);
+}
+
+.topFace {
+  position: absolute;
+
+  left: 10.25px;
+  top: -16.5px;
+
+  -webkit-transform: rotate(60deg);
+  -moz-transform: rotate(60deg);
+  -o-transform: rotate(60deg);
+}
+
+#slider {
+  width: 200px;
+  margin: 0 auto;
+}
+
+
+/*body three*/
+
+/*
+    Credit to : http://www.the-art-of-web.com/css/3d-transforms/
+*/
+
+.stage {
+  margin: 10em;
+  float: right;
+  padding-left:180px;
+  height: 160px;
+  background:rgba(0,0,0,0.1);
+  -webkit-perspective: 1500px;
+  -moz-perspective: 1500px;
+}
+
+@-webkit-keyframes spinner {
+  from {
+    -webkit-transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(-360deg);
+  }
+}
+@-moz-keyframes spinner {
+  from {
+    -moz-transform: rotateY(0deg);
+  }
+  to {
+    -moz-transform: rotateY(-360deg);
+  }
+}
+
+.spinner {
+  -webkit-animation-name: spinner;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 6s;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform-origin: 180px 0 0;
+
+  -moz-animation-name: spinner;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-duration: 6s;
+  -moz-transform-style: preserve-3d;
+  -moz-transform-origin: 180px 0 0;
+}
+
+.spinner:hover {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+}
+
+.spinner img {
+  position: absolute;
+  border: 1px solid #ccc;
+  background: rgba(255,255,255,0.8);
+  -webkit-box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+  -moz-box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+}
